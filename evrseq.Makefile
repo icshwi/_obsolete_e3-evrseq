@@ -57,7 +57,7 @@ APPSRC:=$(APP)/src
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
 
-# TEMPLATES += $(wildcard $(APPDB)/*.db)
+TEMPLATES += $(wildcard $(APPDB)/*.db)
 
 # DBDINC_SRCS += $(APPSRC)/transformRecord.c
 
@@ -104,8 +104,6 @@ DBDS += $(APPSRC)/evrseq.dbd
 # USR_LIBS += readline
 # USR_LIBS += xml2
 
-#
-
 # # We don't have LIB_INSTALLS, so will tackle later
 # ifeq ($(T_A),linux-x86_64)
 # USR_LDFLAGS += -Wl,--enable-new-dtags
@@ -119,9 +117,6 @@ DBDS += $(APPSRC)/evrseq.dbd
 # VENDOR_LIBS += $(SUPPORT)/os/linux-x86_64/libflycapture.so.2
 # VENDOR_LIBS += $(SUPPORT)/os/linux-x86_64/libflycapture.so
 
-
-
-
 ## This RULE should be used in case of inflating DB files 
 ## db rule is the default in RULES_DB, so add the empty one
 ## Please look at e3-mrfioc2 for example.
@@ -134,7 +129,7 @@ USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(APPDB)
 #
 SUBS=$(wildcard $(APPDB)/*.substitutions)
-#TMPS=$(wildcard $(APPDB)/*.template)
+TMPS=$(wildcard $(APPDB)/*.template)
 #
 db: $(SUBS) $(TMPS)
 
@@ -151,7 +146,7 @@ $(TMPS):
 	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db $@
 
 #
-# .PHONY: db $(SUBS) $(TMPS)
+.PHONY: db $(SUBS) $(TMPS)
 
 vlibs:
 
