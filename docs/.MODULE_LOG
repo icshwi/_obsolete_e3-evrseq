@@ -1,0 +1,20 @@
+>>
+Script is used     : e3TemplateGenerator.bash
+Script Path        : /home/waynelewis/git/e3-tools/e3TemplateGenerator
+User               : waynelewis
+Log Time           : 2018Oct04-2057-25CEST
+e3 repo Hash       : 
+
+>>
+>> Your sources are located in https://bitbucket.org/nicklasholmberg.
+>> git submodule will be used.
+>> 
+EPICS_MODULE_NAME  : evrseq
+E3_MODULE_SRC_PATH : ics-evr-seq
+EPICS_MODULE_URL   : https://bitbucket.org/nicklasholmberg
+E3_TARGET_URL      : https://github.com/waynelewis
+>> 
+e3 module name     : e3-evrseq
+e3 module url full : https://bitbucket.org/nicklasholmberg/ics-evr-seq
+e3 target url full : https://github.com/waynelewis/e3-evrseq
+>> 

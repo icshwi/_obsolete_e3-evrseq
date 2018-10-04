@@ -1,0 +1,4 @@
+[submodule "ics-evr-seq"]
+	path = ics-evr-seq
+	url = https://bitbucket.org/nicklasholmberg/ics-evr-seq
+	ignore = all
