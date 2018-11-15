@@ -1,0 +1,14 @@
+
+>>
+Update Log Time    : 2018Nov15-1051-52CET
+>>
+Script is used     : e3TemplateGenerator.bash
+Script Path        : /epics/iocs/e3/e3-tools/e3TemplateGenerator
+User               : root
+e3 repo Hash       : 
+
+EPICS_MODULE_NAME  :                             evrseq
+E3 MODULE VERSION  :                             master
+EPICS BASE VERSION :                        base-3.15.5
+E3 REQUIRE VERSION :                              3.0.0
+>>

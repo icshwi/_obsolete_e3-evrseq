@@ -8,7 +8,9 @@ core.*
 .#*
 \#*
 *.local
-\#*
 .cvsignore
 *_old/
 *PVs.list
+*.Makefile~
+
+

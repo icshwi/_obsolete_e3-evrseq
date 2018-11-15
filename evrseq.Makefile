@@ -27,7 +27,7 @@
 ## The following lines are mandatory, please don't change them.
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(E3_REQUIRE_TOOLS)/driver.makefile
-include $(where_am_I)/../configure/DECOUPLE_FLAGS
+include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
 
 
 
@@ -66,12 +66,10 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 # DBDINC_DEPS = $(subst .c,$(DEP), $(DBDINC_SRCS:$(APPSRC)/%=%))
 
 
-# HEADERS += $(APPSRC)/aCalcPostfix.h
-# HEADERS += $(DBDINC_HDRS)
-
 SOURCES += $(APPSRC)/evrseq.c
-# # DBDINC_SRCS should be last of the series of SOURCES
-# SOURCES += $(DBDINC_SRCS)
+SOURCES += $(APPSRC)/getTimestamp.c
+#timestamp_scr += $(APPSRC)/getTimestamp.c
+#SOURCES += $(filter $(timestamp_src), $(wildcard $(APPSRC)/*.c))
 
 DBDS += $(APPSRC)/evrseq.dbd
 
