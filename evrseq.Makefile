@@ -67,7 +67,7 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 
 
 SOURCES += $(APPSRC)/evrseq.c
-SOURCES += $(APPSRC)/getTimestamp.c
+#SOURCES += $(APPSRC)/getTimestamp.c
 #timestamp_scr += $(APPSRC)/getTimestamp.c
 #SOURCES += $(filter $(timestamp_src), $(wildcard $(APPSRC)/*.c))
 
