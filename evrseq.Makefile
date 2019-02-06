@@ -65,12 +65,12 @@ TEMPLATES += $(wildcard $(APPDB)/*.db)
 # DBDINC_DEPS = $(subst .c,$(DEP), $(DBDINC_SRCS:$(APPSRC)/%=%))
 
 
-SOURCES += $(APPSRC)/evrseq.c
+SOURCES += $(APPSRC)/evrseqcalc.c
 #SOURCES += $(APPSRC)/getTimestamp.c
 #timestamp_scr += $(APPSRC)/getTimestamp.c
 #SOURCES += $(filter $(timestamp_src), $(wildcard $(APPSRC)/*.c))
 
-DBDS += $(APPSRC)/evrseq.dbd
+DBDS += $(APPSRC)/evrseqcalc.dbd
 
 #
 # $(DBDINC_DEPS): $(DBDINC_HDRS)
@@ -126,9 +126,10 @@ USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(APPDB)
 #
 SUBS=$(wildcard $(APPDB)/*.substitutions)
-TMPS=$(wildcard $(APPDB)/*.template)
+#TMPS=$(wildcard $(APPDB)/*.template)
 #
-db: $(SUBS) $(TMPS)
+db: $(SUBS) 
+# $(TMPS)
 
 $(SUBS):
 	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
@@ -136,14 +137,15 @@ $(SUBS):
 	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db -S $@  > $(basename $(@)).db.d
 	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db -S $@
 
-$(TMPS):
-	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
-	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
-	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db $@  > $(basename $(@)).db.d
-	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db $@
+#$(TMPS):
+#	@printf "Inflating database ... %44s >>> %40s \n" "$@" "$(basename $(@)).db"
+#	@rm -f  $(basename $(@)).db.d  $(basename $(@)).db
+#	@$(MSI) -D $(USR_DBFLAGS) -o $(basename $(@)).db $@  > $(basename $(@)).db.d
+#	@$(MSI)    $(USR_DBFLAGS) -o $(basename $(@)).db $@
 
 #
-.PHONY: db $(SUBS) $(TMPS)
+.PHONY: db $(SUBS) 
+#$(TMPS)
 
 vlibs:
 

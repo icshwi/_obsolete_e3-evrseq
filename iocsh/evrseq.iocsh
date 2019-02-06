@@ -1,6 +1,8 @@
 ## Load record instances
-dbLoadRecords("modifyevrseq.db","SYS_EVRSEQ=$(SYS_EVRSEQ), EVR_EVRSEQ=$(EVR_EVRSEQ), DEV1=$(DEV1), DEV2=$(DEV2), DEV3=$(DEV3), DEV4=$(DEV4), NCG_SYS=$(NCG_SYS), NCG_DRV=$(NCG_DRV)")
+dbLoadRecords("evrseq.db","SYS_EVRSEQ=$(SYS_EVRSEQ), EVR_EVRSEQ=$(EVR_EVRSEQ), DEV1=$(DEV1), DEV2=$(DEV2), DEV3=$(DEV3), DEV4=$(DEV4), NCG_SYS=$(NCG_SYS), NCG_DRV=$(NCG_DRV)")
+#, SYS=$(SYS_EVRSEQ), EVR=$(EVR_EVRSEQ)")
 
+# dbLoadRecords("evrseqdelay.db","SYS_EVRSEQ=$(SYS_EVRSEQ), EVR_EVRSEQ=$(EVR_EVRSEQ), DEV1=$(DEV1), DEV2=$(DEV2), DEV3=$(DEV3), DEV4=$(DEV4), NCG_SYS=$(NCG_SYS), NCG_DRV=$(NCG_DRV), SYS=$(SYS_EVRSEQ), EVR=$(EVR_EVRSEQ)")
 # Alternative method of loading records, using unbuilt substitutions file
 #
 # Change into the development directory so that the substitution and
